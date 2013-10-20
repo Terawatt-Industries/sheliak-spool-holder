@@ -15,9 +15,9 @@ shd = 75 - 20; 	// screw hole distance = base width - padding of 10*2
 slide_len = 180;
 m4_diameter = 4 + 0.1;
 
-spool_holder_assembly(w, l, t, shd, slide_len, m4_diameter);
+spool_holder_assembly();
 
-module spool_holder_assembly(w, l, t, shd, slide_len, m4_diameter) {
+module spool_holder_assembly(w = w, l = l, t = t, shd = shd, slide_len = slide_len, m4_diameter = m4_diameter) {
 	color([0, 0, 0]) sheliak_spool_holder_base(w, l, t, shd, slide_len, m4_diameter);
 	rotate([90, 0, 0]) translate([w / 2, t, -40]) spool_holder(75, 140, 4, 0.01, 1);
 	rotate([90, 0, 0]) translate([w / 2, t, -slide_len - 40]) mirror([0, 0, 1]) spool_holder(75, 140, 4, 0.01, 1);

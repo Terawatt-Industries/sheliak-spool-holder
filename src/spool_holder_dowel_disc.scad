@@ -4,15 +4,15 @@
 use <spool_holder.scad>
 use <acetal_bushing.scad>
 
-base_width = 75;
+base_width = 65;
 m4_diameter = 4 + 0.1;
-height = 30;
+height = 25;
 overflow = 0.01;	//avoid manifold errors
 
-spool_holder_dowel_disc(base_width, m4_diameter, height, overflow);
-//acetal_bushing();
+spool_holder_dowel_disc();
+// acetal_bushing();
 
-module spool_holder_dowel_disc(bw, m4d, h, o) {
+module spool_holder_dowel_disc(bw = base_width, m4d = m4_diameter, h = height, o = overflow) {
 	difference() {
 		// base
 		cylinder(r = bw * 1.05 / 2, h = h, $fn = 100);
